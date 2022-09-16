@@ -1,0 +1,11 @@
+import mongoose from "mongoose";
+const { Schema } = mongoose;
+
+const EquipmentSchema = new mongoose.Schema({
+  name:{
+    type: String,
+    require: true
+  }
+})
+
+export default mongoose.model("Equipment", EquipmentSchema)
