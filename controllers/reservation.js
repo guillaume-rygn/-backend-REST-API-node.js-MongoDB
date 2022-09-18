@@ -40,7 +40,6 @@ export const deleteReservation = async (req, res, next) => {
     
     try{
       try{
-        console.log(number)
         await Room.updateOne({ _id: number}, {$pull : {reservation: req.params.id}})
       }catch(err){
         next(err)

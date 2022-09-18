@@ -23,11 +23,8 @@ mongoose.connection.on("disconnected", () => {
   console.log("MongoDB disconnected!")
 })
 
-
-//middlewares
 app.use(cors())
 app.use(express.json())
-
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"), //modifier pour sécuriser les requetes depuis le site web uniquement
@@ -35,6 +32,8 @@ app.use((req, res, next) => {
   next()
 })
 
+
+//middlewares
 app.use("/api/v1/rooms", rooms)
 app.use("/api/v1/reservations", reservations)
 
