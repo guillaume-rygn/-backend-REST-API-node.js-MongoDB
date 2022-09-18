@@ -35,7 +35,9 @@ export const deleteReservation = async (req, res, next) => {
 
     let number;
     await Reservation.findById(req.params.id)
-      .then((store) => { number = (store.room.toString()) })
+      .then((store) => { 
+        number = (store.room.toString())
+       })
     
     
     try{
